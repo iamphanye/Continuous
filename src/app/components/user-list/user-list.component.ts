@@ -32,6 +32,6 @@ export class UserListComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) {}
 
   async ngOnInit() {
-    this.users = await this.firebaseService.getUsers();
+    this.users = await this.firebaseService.getDataFromFirestore();  // Llama al método correcto
   }
 }
