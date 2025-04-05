@@ -21,6 +21,10 @@ jobs:
         run: npm install
 
       - name: Build de la app
-        run: npm run build
+        run: npm run build --prod  # --prod para producción
 
-      # Aquí podrías agregar más pasos si vas a desplegar (por ejemplo a Firebase o GitHub Pages)
+      - name: Deploy a GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Asegúrate de que sea la rama correcta
+          folder: dist/deployment  # Cambia esto por el nombre de tu app en el dist
