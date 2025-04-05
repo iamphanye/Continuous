@@ -28,3 +28,4 @@ jobs:
         with:
           branch: gh-pages  # Asegúrate de que sea la rama correcta
           folder: dist/deployment  # Cambia esto por el nombre de tu app en el dist
+          token: ${{ secrets.GH_TOKEN }}  # El token secreto para permitir el deploy
