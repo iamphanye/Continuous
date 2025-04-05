@@ -1,0 +1,26 @@
+name: Build and Deploy Angular App
+
+on:
+  push:
+    branches: [ master ]  # o "main" si usas esa rama
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Build de la app
+        run: npm run build
+
+      # Aquí podrías agregar más pasos si vas a desplegar (por ejemplo a Firebase o GitHub Pages)
